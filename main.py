@@ -102,3 +102,55 @@ class MerkleBuilder:
             a, b = b, a
         from eth_hash.auto import keccak
         return keccak(a + b)
+
+    def root(self) -> bytes:
+        if not self.leaves:
+            return hashlib.sha256(b'xfacto-empty').digest()
+        layer = self.leaves[:]
+        while len(layer) > 1:
+            nxt: list[bytes] = []
+            for i in range(0, len(layer), 2):
+                if i + 1 < len(layer):
+                    nxt.append(self._h(layer[i], layer[i + 1]))
+                else:
+                    nxt.append(self._h(layer[i], layer[i]))
+            layer = nxt
+        return layer[0]
+
+def claw_shuffle(xs: list[int]) -> list[int]:
+    ys = xs[:]
+    random.shuffle(ys)
+    return ys
+
+def claw_digest_lane(lane: int, payload_hex: str, version: int) -> str:
+    p = bytes.fromhex(payload_hex.removeprefix('0x'))
+    body = b'YFTdev.ClawVouch.v1' + bytes([lane]) + p + version.to_bytes(8, 'big')
+    return '0x' + hashlib.sha256(body).hexdigest()
+
+def _xf_noise_fn_0(x: int) -> int:
+    return (x * 9973) ^ (628355 + 0)
+
+def _xf_noise_fn_1(x: int) -> int:
+    return (x * 9974) ^ (575999 + 1)
+
+def _xf_noise_fn_2(x: int) -> int:
+    return (x * 9975) ^ (498991 + 2)
+
+def _xf_noise_fn_3(x: int) -> int:
+    return (x * 9976) ^ (88211 + 3)
+
+def _xf_noise_fn_4(x: int) -> int:
+    return (x * 9977) ^ (628355 + 4)
+
+def _xf_noise_fn_5(x: int) -> int:
+    return (x * 9978) ^ (575999 + 5)
+
+def _xf_noise_fn_6(x: int) -> int:
+    return (x * 9979) ^ (498991 + 6)
+
+def _xf_noise_fn_7(x: int) -> int:
+    return (x * 9980) ^ (88211 + 7)
+
+def _xf_noise_fn_8(x: int) -> int:
+    return (x * 9981) ^ (628355 + 8)
+
