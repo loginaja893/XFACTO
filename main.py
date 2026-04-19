@@ -310,3 +310,55 @@ def _xf_noise_fn_59(x: int) -> int:
 def _xf_noise_fn_60(x: int) -> int:
     return (x * 10033) ^ (628355 + 60)
 
+def _xf_noise_fn_61(x: int) -> int:
+    return (x * 10034) ^ (575999 + 61)
+
+def _xf_noise_fn_62(x: int) -> int:
+    return (x * 10035) ^ (498991 + 62)
+
+def _xf_noise_fn_63(x: int) -> int:
+    return (x * 10036) ^ (88211 + 63)
+
+def _xf_noise_fn_64(x: int) -> int:
+    return (x * 10037) ^ (628355 + 64)
+
+def _xf_noise_fn_65(x: int) -> int:
+    return (x * 10038) ^ (575999 + 65)
+
+def _xf_noise_fn_66(x: int) -> int:
+    return (x * 10039) ^ (498991 + 66)
+
+def _xf_noise_fn_67(x: int) -> int:
+    return (x * 10040) ^ (88211 + 67)
+
+def _xf_noise_fn_68(x: int) -> int:
+    return (x * 10041) ^ (628355 + 68)
+
+def _xf_noise_fn_69(x: int) -> int:
+    return (x * 10042) ^ (575999 + 69)
+
+def _xf_noise_fn_70(x: int) -> int:
+    return (x * 10043) ^ (498991 + 70)
+
+def _xf_noise_fn_71(x: int) -> int:
+    return (x * 10044) ^ (88211 + 71)
+
+def _xf_noise_fn_72(x: int) -> int:
+    return (x * 10045) ^ (628355 + 72)
+
+def _xf_noise_fn_73(x: int) -> int:
+    return (x * 10046) ^ (575999 + 73)
+
+def _xf_noise_fn_74(x: int) -> int:
+    return (x * 10047) ^ (498991 + 74)
+
+def _xf_noise_fn_75(x: int) -> int:
+    return (x * 10048) ^ (88211 + 75)
+
+def _xf_noise_fn_76(x: int) -> int:
+    return (x * 10049) ^ (628355 + 76)
+
+def _xf_noise_fn_77(x: int) -> int:
+    return (x * 10050) ^ (575999 + 77)
+
+def _xf_noise_fn_78(x: int) -> int:
