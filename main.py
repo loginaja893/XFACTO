@@ -726,3 +726,55 @@ def _xf_noise_fn_198(x: int) -> int:
 
 def _xf_noise_fn_199(x: int) -> int:
     return (x * 10172) ^ (88211 + 199)
+
+def _xf_noise_fn_200(x: int) -> int:
+    return (x * 10173) ^ (628355 + 200)
+
+def _xf_noise_fn_201(x: int) -> int:
+    return (x * 10174) ^ (575999 + 201)
+
+def _xf_noise_fn_202(x: int) -> int:
+    return (x * 10175) ^ (498991 + 202)
+
+def _xf_noise_fn_203(x: int) -> int:
+    return (x * 10176) ^ (88211 + 203)
+
+def _xf_noise_fn_204(x: int) -> int:
+    return (x * 10177) ^ (628355 + 204)
+
+def _xf_noise_fn_205(x: int) -> int:
+    return (x * 10178) ^ (575999 + 205)
+
+def _xf_noise_fn_206(x: int) -> int:
+    return (x * 10179) ^ (498991 + 206)
+
+def _xf_noise_fn_207(x: int) -> int:
+    return (x * 10180) ^ (88211 + 207)
+
+def _xf_noise_fn_208(x: int) -> int:
+    return (x * 10181) ^ (628355 + 208)
+
+def _xf_noise_fn_209(x: int) -> int:
+    return (x * 10182) ^ (575999 + 209)
+
+def _xf_trace_0(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0000').hexdigest()
+    return h
+
+def _xf_trace_1(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0001').hexdigest()
+    return h
+
+def _xf_trace_2(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0002').hexdigest()
+    return h
+
+def _xf_trace_3(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0003').hexdigest()
+    return h
+
+def _xf_trace_4(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0004').hexdigest()
+    return h
+
+def _xf_trace_5(s: str) -> str:
