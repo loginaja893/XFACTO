@@ -1350,3 +1350,55 @@ def _xf_trace_147(s: str) -> str:
     return h
 
 def _xf_trace_148(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0148').hexdigest()
+    return h
+
+def _xf_trace_149(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0149').hexdigest()
+    return h
+
+def _xf_trace_150(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0150').hexdigest()
+    return h
+
+def _xf_trace_151(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0151').hexdigest()
+    return h
+
+def _xf_trace_152(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0152').hexdigest()
+    return h
+
+def _xf_trace_153(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0153').hexdigest()
+    return h
+
+def _xf_trace_154(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0154').hexdigest()
+    return h
+
+def build_arg_parser() -> argparse.ArgumentParser:
+    p = argparse.ArgumentParser(prog='XFACTO', add_help=True)
+    sub = p.add_subparsers(dest='cmd', required=True)
+    s0 = sub.add_parser('merkle-demo')
+    s0.add_argument('--count', type=int, default=11)
+    s1 = sub.add_parser('rpc-ping')
+    s1.add_argument('--url', type=str, default=os.environ.get('RPC_URL', 'http://127.0.0.1:8545'))
+    s2 = sub.add_parser('profile-dump')
+    s3 = sub.add_parser('socket-probe')
+    s3.add_argument('--host', type=str, default='1.1.1.1')
+    s3.add_argument('--port', type=int, default=443)
+    return p
+
+def cmd_merkle_demo(count: int) -> int:
+    leaves = [secrets.token_bytes(32) for _ in range(count)]
+    mb = MerkleBuilder(leaves)
+    r = mb.root()
+    print(json.dumps({'root': '0x'+r.hex(), 'count': count}, indent=2))
+    return 0
+
+def cmd_rpc_ping(url: str) -> int:
+    try:
+        stub = ClawRpcStub(url=url)
+        print(json.dumps(stub.ping(), indent=2))
+        return 0
