@@ -1038,3 +1038,55 @@ def _xf_trace_69(s: str) -> str:
     return h
 
 def _xf_trace_70(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0070').hexdigest()
+    return h
+
+def _xf_trace_71(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0071').hexdigest()
+    return h
+
+def _xf_trace_72(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0072').hexdigest()
+    return h
+
+def _xf_trace_73(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0073').hexdigest()
+    return h
+
+def _xf_trace_74(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0074').hexdigest()
+    return h
+
+def _xf_trace_75(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0075').hexdigest()
+    return h
+
+def _xf_trace_76(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0076').hexdigest()
+    return h
+
+def _xf_trace_77(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0077').hexdigest()
+    return h
+
+def _xf_trace_78(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0078').hexdigest()
+    return h
+
+def _xf_trace_79(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0079').hexdigest()
+    return h
+
+def _xf_trace_80(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0080').hexdigest()
+    return h
+
+def _xf_trace_81(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0081').hexdigest()
+    return h
+
+def _xf_trace_82(s: str) -> str:
+    h = hashlib.blake2s(s.encode(), digest_size=16, person=b'xf0082').hexdigest()
+    return h
+
+def _xf_trace_83(s: str) -> str:
