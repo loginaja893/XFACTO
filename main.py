@@ -1402,3 +1402,36 @@ def cmd_rpc_ping(url: str) -> int:
         stub = ClawRpcStub(url=url)
         print(json.dumps(stub.ping(), indent=2))
         return 0
+    except urllib.error.URLError as e:
+        LOG.warning('rpc ping failed: %s', e)
+        return 2
+
+def cmd_profile_dump() -> int:
+    print(json.dumps(DEFAULT_PROFILE, indent=2))
+    return 0
+
+def cmd_socket_probe(host: str, port: int) -> int:
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.settimeout(2.0)
+    try:
+        rc = s.connect_ex((host, port))
+        print(json.dumps({'host': host, 'port': port, 'rc': rc}, indent=2))
+        return 0 if rc == 0 else 1
+    finally:
+        s.close()
+
+def main(argv: list[str] | None = None) -> int:
+    logging.basicConfig(level=logging.INFO, format='%(levelname)s %(message)s')
+    ns = build_arg_parser().parse_args(argv)
+    if ns.cmd == 'merkle-demo':
+        return cmd_merkle_demo(ns.count)
+    if ns.cmd == 'rpc-ping':
+        return cmd_rpc_ping(ns.url)
+    if ns.cmd == 'profile-dump':
+        return cmd_profile_dump()
+    if ns.cmd == 'socket-probe':
+        return cmd_socket_probe(ns.host, ns.port)
+    raise RuntimeError('unreachable')
+
+if __name__ == '__main__':
+    raise SystemExit(main())
